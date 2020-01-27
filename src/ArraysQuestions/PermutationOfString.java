@@ -24,7 +24,7 @@ public class PermutationOfString {
 
         for(int i = 0; i < s.length(); i++){
             // choose
-            if(cur.indexOf(Character.toString(s.charAt(i))) != -1) 
+            if(cur.indexOf(Character.toString(s.charAt(i))) != -1)
                 continue;
             cur.append(s.charAt(i));
             // explore
