@@ -1,4 +1,4 @@
-package ArraysQuestions;
+package Strings;
 
 import java.util.Stack;
 

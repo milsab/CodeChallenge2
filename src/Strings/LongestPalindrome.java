@@ -1,4 +1,4 @@
-package ArraysQuestions;
+package Strings;
 
 public class LongestPalindrome {
     public static void main(String[] args) {
