@@ -25,8 +25,8 @@ public class BTLeftSideView {
                 if(i == 0){
                     ans.add(node.val);
                 }
-                q.add(node.left);
-                q.add(node.right);
+                if(node.left != null) q.add(node.left);
+                if(node.right != null) q.add(node.right);
             }
         }
         return ans;
