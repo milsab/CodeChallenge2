@@ -16,7 +16,7 @@ import java.util.List;
 // ]
 public class ArrayPermutation {
     public static void main(String[] args) {
-        for(List<Integer> x : permute(new int[]{1,2,3})){
+        for(List<Integer> x : permute(new int[]{1,2,2})){
             for(int i : x){
                 System.out.print(i + " ");
             }
