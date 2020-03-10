@@ -5,7 +5,7 @@ import java.util.List;
 
 public class StringPermutation {
     public static void main(String[] args) {
-        for(String s: permute("122")){
+        for(String s: permute("123")){
             System.out.println(s);
         }
     }
