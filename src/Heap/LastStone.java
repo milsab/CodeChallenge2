@@ -21,7 +21,7 @@ public class LastStone {
 
         for(int x : stones){
             maxHeap.add(x);
-        }x
+        }
 
         while(maxHeap.size() > 1){
             int a = maxHeap.remove();
