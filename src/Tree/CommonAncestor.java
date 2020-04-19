@@ -8,7 +8,7 @@ public class CommonAncestor {
 
         if(isCover(a, b)) return a;
         if(isCover(b, a)) return b;
-        
+
         boolean left = isCover(root.left, a);
         boolean right = isCover(root.right, b);
 
