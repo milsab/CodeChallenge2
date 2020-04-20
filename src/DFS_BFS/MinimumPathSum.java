@@ -14,11 +14,16 @@ public class MinimumPathSum {
 
     static int minSum = Integer.MAX_VALUE;
     public static void dfs(int[][] grid, int row, int col, int sum){
-        if(row == grid.length - 1 && col == grid[0].length - 1)
-            minSum = Math.min(minSum, sum);
         if(row >= grid.length || col >= grid[0].length)
             return;
+
         sum += grid[row][col];
+
+        if(row == grid.length - 1 && col == grid[0].length - 1){
+            minSum = Math.min(minSum, sum);
+            return;
+        }
+            
         dfs(grid, row + 1, col, sum);
         dfs(grid, row, col + 1, sum);
     }
