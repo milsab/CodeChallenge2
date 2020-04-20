@@ -19,7 +19,7 @@ public class MinimumPathSum {
         if(row >= grid.length || col >= grid[0].length)
             return;
         sum += grid[row][col];
-        dfs(grid, row + 1, col, sum); 
+        dfs(grid, row + 1, col, sum);
         dfs(grid, row, col + 1, sum);
     }
 }
