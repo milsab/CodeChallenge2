@@ -23,6 +23,7 @@ public class BadVersion {
     }
 
     static boolean isBadVersion(int version){
-
+        // TODO, API call
+        return true;
     }
 }
