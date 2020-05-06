@@ -13,6 +13,7 @@ package Backtracking;
 //]
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArrayPermutation2 {
@@ -27,6 +28,7 @@ public class ArrayPermutation2 {
 
     static List<List<Integer>> ans = new ArrayList<>();
     public static List<List<Integer>> permutation(int[] nums){
+        Arrays.sort(nums);
         BT(nums, new ArrayList<>(), new boolean[nums.length]);
         return ans;
     }
