@@ -9,6 +9,7 @@ public class FindAllAnagrams {
         System.out.print(findAnagrams("cbaebabacd", "abc"));
     }
 
+    // Brute Force Approach
     static public List<Integer> findAnagrams(String s, String p) {
         int len = p.length();
         List<Integer> ans = new ArrayList<>();
@@ -22,12 +23,23 @@ public class FindAllAnagrams {
     }
 
     static public boolean isAnagram(String a, String b){
-        String[] c1 = a.split("");
-        String[] c2 = b.split("");
-        Arrays.sort(c1);
-        Arrays.sort(c2);
-        String s1 = String.join("", c1);
-        String s2 = String.join("", c2);
-        return s1.equals(s2);
+        char[] map = new char[26];
+
+        for(char c : a.toCharArray()){
+            map[c - 'a'] += 1;
+        }
+
+        for(char c : b.toCharArray()){
+            if(map[c -'a'] == 0)
+                return false;
+            map[c - 'a'] -= 1;
+        }
+
+        for(int i = 0; i < 26; i++){
+            if(map[i] < 0)
+                return false;
+        }
+
+        return true;
     }
 }
