@@ -13,7 +13,7 @@ public class FindAllAnagrams {
         List<Integer> list = new ArrayList<>();
         if (s == null || s.length() == 0 || p == null || p.length() == 0) return list;
 
-        int[] hash = new int[256]; 
+        int[] hash = new int[256];
 
         for (char c : p.toCharArray()) {
             hash[c]++;
