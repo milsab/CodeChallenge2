@@ -14,9 +14,38 @@ public class Permutation2String {
         System.out.println(checkInclusion("abcmxfgkde", "abcdefxkmg"));
     }
 
+    // Array Approach
+    public static boolean checkInclusion(String s1, String s2) {
+        char[] map = new char[26];
+        for(char c : s1.toCharArray()){
+            map[c - 'a']++;
+        }
 
-    // Second Approach
-    public static boolean checkInclusion(String s1, String s2){
+        int len = s1.length();
+
+        for(int i = 0; i <= s2.length() - s1.length(); i++){
+            char[] tempMap = new char[26];
+            for(int j = 0; j < len; j++){
+                char c = s2.charAt(j + i);
+                tempMap[c -'a']++;
+            }
+            if(matches(map, tempMap))
+                return true;
+        }
+
+        return false;
+    }
+
+    public static boolean matches(char[] s1map, char[] s2map) {
+        for (int i = 0; i < 26; i++) {
+            if (s1map[i] != s2map[i])
+                return false;
+        }
+        return true;
+    }
+
+    // HashMap Approach
+    public static boolean checkInclusion_2(String s1, String s2){
         HashMap<Character, Integer> map = new HashMap<>();
         for(char c : s1.toCharArray()){
             map.put(c, map.getOrDefault(c, 0) + 1);
