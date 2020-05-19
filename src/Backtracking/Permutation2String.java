@@ -6,6 +6,7 @@ package Backtracking;
 // Explanation: s2 contains one permutation of s1 ("ba").
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Permutation2String {
@@ -13,8 +14,34 @@ public class Permutation2String {
         System.out.println(checkInclusion("abcmxfgkde", "abcdefxkmg"));
     }
 
-    static List<String> perm = new ArrayList<>();
+
+    // Second Approach
     public static boolean checkInclusion(String s1, String s2){
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(char c : s1.toCharArray()){
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        int len = s1.length();
+
+        for(int i = 0; i < s2.length(); i++){
+            if(map.containsKey(s2.charAt(i))){
+                HashMap<Character, Integer> tempMap = new HashMap<>();
+                for(int j = i; j < s2.length() && j < i + len; j++){
+                    char c = s2.charAt(j);
+                    tempMap.put(c, tempMap.getOrDefault(c, 0) + 1);
+                }
+                if(map.equals(tempMap))
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    static List<String> perm = new ArrayList<>();
+    public static boolean checkInclusion_1(String s1, String s2){
         BT(s1, new ArrayList<>());
 //        System.out.println(perm.size());
         for(String s : perm){
