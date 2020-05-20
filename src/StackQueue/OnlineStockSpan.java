@@ -12,26 +12,49 @@ package StackQueue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class OnlineStockSpan {
 
-    List<Integer> list;
+    // Second Approach
+    Stack<Integer> prices, weights;
 
     public OnlineStockSpan() {
-        list = new ArrayList<>();
+        prices = new Stack();
+        weights = new Stack();
     }
 
     public int next(int price) {
-
-        list.add(price);
-        int ans = 0;
-
-        for(int i = list.size() - 1; i >= 0; i--){
-            if(list.get(i) <= price)
-                ans++;
-            else
-                break;
+        int w = 1;
+        while (!prices.isEmpty() && prices.peek() <= price) {
+            prices.pop();
+            w += weights.pop();
         }
-        return ans;
+
+        prices.push(price);
+        weights.push(w);
+        return w;
     }
+
+
+    // First Approach
+//    List<Integer> list;
+//
+//    public OnlineStockSpan() {
+//        list = new ArrayList<>();
+//    }
+//
+//    public int next(int price) {
+//
+//        list.add(price);
+//        int ans = 0;
+//
+//        for(int i = list.size() - 1; i >= 0; i--){
+//            if(list.get(i) <= price)
+//                ans++;
+//            else
+//                break;
+//        }
+//        return ans;
+//    }
 }
