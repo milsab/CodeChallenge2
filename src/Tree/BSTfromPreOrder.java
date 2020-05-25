@@ -30,6 +30,6 @@ public class BSTfromPreOrder {
             } else{
                 insertNode(node.right, val);
             }
-        }   
+        }
     }
 }
