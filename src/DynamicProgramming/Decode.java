@@ -6,15 +6,7 @@ public class Decode {
         System.out.print(findDecodeWays("326"));
     }
 
-    public static int findWays(String s){
-        int len = s.length();
-        int[] dp = new int[len + 1];
 
-        for(int i = 0; i < s.length(); i++){
-
-        }
-
-    }
 
     public static int findDecodeWays(String s){
         int len = s.length();
