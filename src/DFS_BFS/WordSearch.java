@@ -35,7 +35,7 @@ public class WordSearch {
     }
 
     public static boolean search(char[][] board, int i, int j, String word, int index, boolean[][] visited){
-        
+
         if(index == word.length())
             return true;
 
