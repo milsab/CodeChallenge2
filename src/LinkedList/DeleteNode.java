@@ -11,10 +11,7 @@ public class DeleteNode {
     public void deleteNode(Node node){
         if(node == null)
             return;
-
-        Node temp = node.next;
-        node.val = temp.val;
-        node.next = temp.next;
-        temp = null;
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 }
